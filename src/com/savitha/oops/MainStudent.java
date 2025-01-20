@@ -24,8 +24,11 @@ public class MainStudent {
 		Student alex = new Student(123, "alex", "male");
 		Student ravi = new Student(456, "ravi", "male");
 		
+		
+		System.out.println(alex.studentName);
 		alex.printStudentInfo();
 		System.out.println("-------------------------");
+		System.out.println(ravi.studentName);
 		ravi.printStudentInfo();
 		
 	}
