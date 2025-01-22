@@ -37,6 +37,7 @@ class Bank{
 	
 	public void deposit(int depositAmount) {
 		System.out.println("Balance Before deposit : "+ bankBalance);
+		System.out.println("Deposit Amount : "+ depositAmount);
 		bankBalance = bankBalance + depositAmount;
 		System.out.println("Balance After Deposit : "+ bankBalance);
 		
@@ -48,8 +49,11 @@ public class MainBank {
 	public static void main(String[] args) {
 		Bank sudheer = new Bank(123456, "sudheer", 50000);
 		sudheer.printAccountDetails();
+		System.out.println("--------------------------------");
 		sudheer.bankBalance();
+		System.out.println("--------------------------------");
 		sudheer.withdraw(1000);
+		System.out.println("--------------------------------");
 		sudheer.deposit(5000);
 	}
 
