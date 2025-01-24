@@ -1,4 +1,4 @@
-package package1;
+package com.package1;
 
 public class A {
 	

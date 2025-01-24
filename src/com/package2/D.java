@@ -1,6 +1,6 @@
-package package2;
+package com.package2;
 
-import package1.A;
+import com.package1.A;
 
 public class D extends A{
 	
