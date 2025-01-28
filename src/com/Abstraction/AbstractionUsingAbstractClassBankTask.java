@@ -1,4 +1,6 @@
 package com.Abstraction;
+import java.util.Scanner;
+
 abstract class Bank{
 	//Abstract Method
 	abstract void loanIntrest(float loanAmount);
@@ -39,22 +41,45 @@ class Ippb extends Bank{
 		System.out.println("Total Loan and Intrest : "+ total);
 	}
 }
+
+class BankTask{
+	void test(Bank loan, float loanAmount,int aadharNumber, int panNumber,String name) {
+		loan.loanIntrest(loanAmount);
+		loan.requiredDocuments(aadharNumber, panNumber, name);
+		System.out.println("-----------------------------");
+	}
+}
+
 public class AbstractionUsingAbstractClassBankTask {
 	public static void main(String[] args) {
-		Sbi sbi = new Sbi();
-		sbi.requiredDocuments(1234, 965898, "Alex");
-		sbi.loanIntrest(10000);
-		
-		System.out.println("-----------------------------------");
-		Hdfc hdfc = new Hdfc();
-		hdfc.requiredDocuments(859899, 164616, "Roy");
-		sbi.loanIntrest(20000);
-		
-		System.out.println("-----------------------------------");
-		Ippb ippb = new Ippb();
-		ippb.requiredDocuments(655768, 898789, "Ram");
-		ippb.loanIntrest(30000);
-		System.out.println("-----------------------------------");
+		for(int i=0; i<3; i++) {
+			Scanner sc = new Scanner(System.in);
+			System.out.println("Enter the Bank : ");
+			String bank = sc.nextLine();
+			System.out.println("Enter the Aadhar Number : ");
+			int aadharNumber = sc.nextInt();
+			System.out.println("Enter the Pan Number : ");
+			int panNumber = sc.nextInt();
+			sc.nextLine();
+			System.out.println("Enter the Name : ");
+			String name = sc.nextLine();
+			System.out.println("Enter the LoanAmmount");
+			float loanAmount = sc.nextFloat();
+			Bank loan;
+			switch(bank) {
+			case "sbi" -> loan = new Sbi();
+			case "hdfc" -> loan = new Hdfc();
+			case "ippb" -> loan = new Ippb();
+			default -> loan = null;
+			}
+			if(loan == null) {
+				System.out.println("Enter the Valid Bank SBI OR HDFC or IPPB");
+			}
+			else {
+				BankTask poly = new BankTask();
+				poly.test(loan,loanAmount,aadharNumber,panNumber,name);
+			}
+		}
 	}
 
 }
