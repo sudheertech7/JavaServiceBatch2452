@@ -5,6 +5,8 @@ class Plane{
 	}
 }
 class CargoPlane extends Plane{
+	
+	@Override
 	void fly() {
 		System.out.println("CargoPlane is Flying at Low height");
 	}

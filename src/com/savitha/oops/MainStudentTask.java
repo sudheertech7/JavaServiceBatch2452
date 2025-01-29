@@ -19,7 +19,7 @@ class studentTask{
 	}
 	
 	public void printStudentInfo() {
-		System.out.println("College : "+COLLEGE_NAME+ "  Name : " + studentName + "  Student Id : "+ studentId + " Student Gender :  " + studentGender + " Marks : " + Arrays.toString(studentMarks));
+		System.out.println("College : "+COLLEGE_NAME+ "  Name : " + studentName + "  Student Id : "+ studentId + " Student Gender : " + studentGender + " Marks : " + Arrays.toString(studentMarks));
 	}
 	
 	public void printStudentPercentage() {
@@ -60,7 +60,7 @@ class studentTask{
 public class MainStudentTask {
 	
 	public static void main(String[] args) {
-		studentTask sudheer = new studentTask("sudheer", 1234, "Male", new int [] {60,35,50,50});
+		studentTask sudheer = new studentTask("sudheer", 1234, "Male", new int [] {60,55,50,50,100});
 		sudheer.printStudentInfo();
 		System.out.println("-----------------------------------------------------");
 		sudheer.printStudentPercentage();

@@ -36,29 +36,32 @@ class PolyMorphismTest{
 }
 public class PolymorphismBank {
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter the Bank : ");
-		String bank = sc.nextLine();
-		System.out.println("Enter the Loan Amount : ");
-		int loanAmount = sc.nextInt();
-		
-		Bank loan;
-		
-		switch(bank) {
-		
-		case "sbi" -> loan = new Sbi();
-		case "hdfc" -> loan = new Hdfc();
-		case "ippb" -> loan = new Ippb();
-		default -> loan = null;
+		for(int i=0; i<3; i++) {
+			Scanner sc = new Scanner(System.in);
+			System.out.println("Enter the Bank : ");
+			String bank = sc.nextLine();
+			System.out.println("Enter the Loan Amount : ");
+			int loanAmount = sc.nextInt();
+			
+			Bank loan;
+			
+			switch(bank) {
+			
+			case "sbi" -> loan = new Sbi();
+			case "hdfc" -> loan = new Hdfc();
+			case "ippb" -> loan = new Ippb();
+			default -> loan = null;
+			}
+			
+			if(loan == null) {
+				System.out.println("Enter the Valid Bank SBI OR HDFC or IPPB");
+			}
+			else {
+				PolyMorphismTest poly = new PolyMorphismTest();
+				poly.test(loan,loanAmount);
+			}
 		}
-		
-		if(loan == null) {
-			System.out.println("Enter the Valid Bank SBI OR HDFC or IPPB");
-		}
-		else {
-			PolyMorphismTest poly = new PolyMorphismTest();
-			poly.test(loan,loanAmount);
-		}
+
 
 		
 		
